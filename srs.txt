@@ -1,0 +1,249 @@
+You’re building an Online Course Dashboard using MERN Stack (MongoDB, Express.js, React.js, Node.js) with Razorpay for payment integration.
+
+Here’s a clean, professional SRS (Software Requirements Specification) document — complete with all functional and non-functional requirements, system overview, modules, and use cases — customized exactly for your project.
+
+🧾 Software Requirements Specification (SRS)
+For: Online Course Dashboard 🎓
+
+Technology Stack: MERN (MongoDB, Express.js, React.js, Node.js)
+Payment Gateway: Razorpay
+
+1. Introduction
+1.1 Purpose
+
+The purpose of this document is to define the software requirements for the Online Course Dashboard, a web-based learning platform that allows educators to upload and manage courses, and students to enroll, learn, and track their progress. The document outlines the functional and non-functional requirements, system design constraints, and technology stack used to implement the system.
+
+1.2 Scope
+
+The Online Course Dashboard aims to provide a seamless digital learning experience for students.
+
+Educators can create, upload, and manage courses with video lectures and quizzes.
+
+Students can browse available courses, enroll, make payments via Razorpay, and track their learning progress.
+
+Admins can monitor users, course performance, and transactions.
+
+The system will be developed using the MERN Stack for efficient full-stack implementation and Razorpay for secure payment processing.
+
+2. Overall Description
+2.1 Product Perspective
+
+The system is a standalone web application that integrates the following modules:
+
+Frontend: React.js (for UI/UX and course interaction)
+
+Backend: Node.js & Express.js (for server logic and APIs)
+
+Database: MongoDB (for data storage)
+
+Payment Integration: Razorpay API (for handling course payments securely)
+
+2.2 Product Functions
+
+User Authentication (Sign Up, Login, Logout)
+
+Role-based Access (Admin, Instructor, Student)
+
+Course Management (Create, Edit, Delete, Publish)
+
+Course Enrollment & Payment
+
+Video Content Streaming
+
+Progress Tracking and Completion Status
+
+Dashboard Analytics for Students & Instructors
+
+Razorpay Payment Gateway Integration
+
+Profile Management
+
+Reviews & Ratings
+
+2.3 User Classes and Characteristics
+User Type	Description	Access Level
+Admin	Manages users, courses, and transactions.	Full Access
+Instructor	Creates and manages courses, uploads content.	Medium Access
+Student	Views, purchases, and learns from courses.	Limited Access
+2.4 Operating Environment
+
+Frontend: React.js (with Redux / Context API for state management)
+
+Backend: Node.js + Express.js REST API
+
+Database: MongoDB (Cloud - MongoDB Atlas)
+
+Server Environment: Linux / Windows
+
+Browser Compatibility: Chrome, Edge, Firefox, Safari
+
+Payment Gateway: Razorpay
+
+2.5 Design and Implementation Constraints
+
+Razorpay integration requires HTTPS (SSL) for secure payments.
+
+MongoDB connection string and Razorpay credentials must be stored securely in environment variables.
+
+The system must be responsive for mobile and desktop users.
+
+Proper authentication and authorization using JWT (JSON Web Tokens).
+
+2.6 Assumptions and Dependencies
+
+Users have a stable internet connection.
+
+Razorpay API services are available.
+
+Node.js and MongoDB are installed and configured correctly.
+
+Payment data is processed by Razorpay, not stored locally.
+
+3. Functional Requirements
+3.1 User Authentication Module
+
+FR1: Users can register with email and password.
+
+FR2: Users can log in using valid credentials.
+
+FR3: Passwords must be hashed using bcrypt before storing in MongoDB.
+
+FR4: JWT tokens are used for session management.
+
+FR5: Forgot password functionality via email OTP verification.
+
+3.2 Course Management Module
+
+FR6: Instructors can add, edit, delete, and publish courses.
+
+FR7: Courses include title, description, video lectures, thumbnail, price, and duration.
+
+FR8: Students can view course details before enrollment.
+
+FR9: Courses are categorized by subject, level, and instructor.
+
+3.3 Payment & Enrollment Module
+
+FR10: Students can enroll in a course after successful payment through Razorpay.
+
+FR11: Razorpay order ID and transaction status are stored in MongoDB.
+
+FR12: Users can view payment history and invoices.
+
+FR13: Failed or incomplete payments do not grant access to course content.
+
+3.4 Learning & Progress Tracking
+
+FR14: Students can stream course videos after enrollment.
+
+FR15: System tracks course progress (e.g., watched videos, completed sections).
+
+FR16: Dashboard displays percentage completion of each course.
+
+3.5 Review & Rating Module
+
+FR17: Students can rate and review courses after completion.
+
+FR18: Average rating is displayed on course details page.
+
+3.6 Admin Dashboard
+
+FR19: Admin can view all registered users, instructors, and courses.
+
+FR20: Admin can deactivate or delete users/courses if necessary.
+
+FR21: Admin can monitor all transactions made through Razorpay.
+
+4. Non-Functional Requirements
+4.1 Performance Requirements
+
+The system should load the homepage within 3 seconds.
+
+API calls should respond within 500 ms under normal load.
+
+Must support at least 10,000 users concurrently.
+
+4.2 Security Requirements
+
+All passwords must be stored in encrypted form.
+
+JWT tokens must be used for secure authentication.
+
+Razorpay integration must be over HTTPS.
+
+Sensitive data (keys, tokens) must not be exposed in the frontend.
+
+4.3 Reliability
+
+The system should handle unexpected shutdowns and resume normal operation.
+
+MongoDB replication to prevent data loss.
+
+4.4 Usability
+
+The interface should be intuitive for users of all ages.
+
+The dashboard should have a clear layout for progress tracking.
+
+4.5 Maintainability
+
+Code must follow modular architecture (MVC or component-based).
+
+API routes should be well-documented.
+
+4.6 Scalability
+
+MongoDB must support scaling as the number of users and courses increase.
+
+Cloud hosting (AWS, Render, or Vercel) for horizontal scaling.
+
+4.7 Portability
+
+Compatible with Windows, macOS, and Linux.
+
+Responsive design for mobile, tablet, and desktop.
+
+5. System Architecture Overview
+
+Frontend: React.js → handles UI, routing, and course rendering
+Backend: Node.js + Express.js → handles API requests and business logic
+Database: MongoDB → stores user profiles, courses, and payment records
+Payment Integration: Razorpay → handles course purchase transactions
+
+Architecture Flow:
+
+User visits frontend and requests data.
+
+React sends API call to Express backend.
+
+Backend queries MongoDB and returns data.
+
+For payment, backend requests Razorpay API for order creation.
+
+Razorpay verifies payment and notifies backend.
+
+Backend updates MongoDB and grants course access.
+
+6. Use Case Diagram (Textual Description)
+
+Actors:
+
+Admin
+
+Instructor
+
+Student
+
+Main Use Cases:
+
+Register/Login (All users)
+
+Create/Edit Course (Instructor)
+
+Enroll & Pay (Student)
+
+View Progress (Student)
+
+Manage Users & Courses (Admin)
+
+View Reports (Admin)
