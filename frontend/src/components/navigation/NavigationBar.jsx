@@ -24,20 +24,20 @@ const NavigationBar = () => {
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-night/80 backdrop-blur-xl">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 sm:py-5">
-        <NavLink to="/" className="group relative inline-flex items-center gap-3">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-neon-cyan">
-            <span className="absolute inset-0 animate-pulse-soft rounded-full bg-neon-cyan/20 blur-lg" />
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-night/85 backdrop-blur-xl">
+      <nav className="flex w-full items-center gap-6 px-6 py-4 sm:px-8 sm:py-5">
+        <NavLink to="/" className="group relative inline-flex shrink-0 items-center gap-4">
+          <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-neon-cyan">
+            <span className="absolute inset-0 animate-pulse-soft rounded-full bg-neon-cyan/15 blur-lg" />
             <span className="relative text-xl font-semibold">CX</span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-sm uppercase tracking-[0.5em] text-white/50">CourX</span>
+          <div className="flex flex-col leading-none whitespace-nowrap">
+            <span className="text-[0.65rem] uppercase tracking-[0.45em] text-white/50">CourX</span>
             <span className="font-display text-lg font-semibold text-white">Immersive Learning</span>
           </div>
         </NavLink>
 
-        <div className="hidden items-center gap-10 lg:flex">
+        <div className="hidden flex-1 items-center justify-center gap-14 overflow-hidden lg:flex">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to
             return (
@@ -46,17 +46,17 @@ const NavigationBar = () => {
                 to={link.to}
                 className={({ isActive: routeActive }) =>
                   clsx(
-                    'relative text-sm font-medium uppercase tracking-[0.3em] text-white/70 transition-colors hover:text-white',
+                    'relative whitespace-nowrap text-sm font-medium uppercase tracking-[0.35em] text-white/65 transition-colors hover:text-white',
                     (isActive || routeActive) && 'text-neon-cyan'
                   )
                 }
               >
                 <span className="relative">
                   {link.label}
-                  {(isActive || location.pathname.startsWith(link.to)) && (
+                  {(isActive || (link.to !== '/' && location.pathname.startsWith(link.to))) && (
                     <motion.span
                       layoutId="nav-glow"
-                      className="absolute -bottom-3 left-1/2 h-px w-full -translate-x-1/2 bg-gradient-to-r from-transparent via-neon-cyan to-transparent"
+                      className="absolute -bottom-3 left-1/2 h-px w-[120%] -translate-x-1/2 bg-gradient-to-r from-transparent via-neon-cyan to-transparent"
                     />
                   )}
                 </span>
@@ -65,7 +65,7 @@ const NavigationBar = () => {
           })}
         </div>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden shrink-0 items-center gap-4 whitespace-nowrap lg:flex">
           <NavLink
             to="/auth/login"
             className="text-sm font-medium uppercase tracking-[0.3em] text-white/60 transition hover:text-white"
