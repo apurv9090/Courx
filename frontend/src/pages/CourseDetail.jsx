@@ -16,7 +16,7 @@ const CourseDetail = () => {
 
   return (
     <div className="relative z-10 flex-1 px-6 pb-24">
-      <div className="mx-auto max-w-5xl pt-20">
+  <div className="mx-auto max-w-5xl pt-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

@@ -22,7 +22,7 @@ const alerts = [
 const AdminDashboard = () => {
   return (
     <div className="relative z-10 flex-1 px-6 pb-24">
-      <div className="mx-auto max-w-6xl pt-20">
+  <div className="mx-auto max-w-6xl pt-12">
         <SectionHeader
           kicker="Admin nexus"
           heading="Monitor every orbit with crystalline clarity."

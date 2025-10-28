@@ -10,7 +10,7 @@ const planOptions = [
 
 const Register = () => {
   return (
-    <div className="relative z-10 flex min-h-[80vh] items-center justify-center px-6 pb-32 pt-24">
+  <div className="relative z-10 flex min-h-[80vh] items-center justify-center px-6 pb-32 pt-16">
       <GlowCard className="w-full max-w-4xl" gradientClass="from-neon-magenta/30 via-neon-cyan/25 to-neon-violet/30" hover={false}>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="space-y-6 text-center">

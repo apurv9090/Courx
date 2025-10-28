@@ -18,7 +18,7 @@ const modules = [
 const StudentDashboard = () => {
   return (
     <div className="relative z-10 flex-1 px-6 pb-24">
-      <div className="mx-auto max-w-6xl pt-20">
+  <div className="mx-auto max-w-6xl pt-12">
         <SectionHeader
           kicker="Student cockpit"
           heading="Your learning constellation is thriving."

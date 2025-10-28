@@ -4,7 +4,7 @@ import GlowCard from '../../components/ui/GlowCard'
 
 const ForgotPassword = () => {
   return (
-    <div className="relative z-10 flex min-h-[80vh] items-center justify-center px-6 pb-32 pt-24">
+  <div className="relative z-10 flex min-h-[80vh] items-center justify-center px-6 pb-32 pt-16">
       <GlowCard className="w-full max-w-lg" gradientClass="from-neon-cyan/25 via-neon-magenta/20 to-neon-violet/25" hover={false}>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="space-y-6 text-center">

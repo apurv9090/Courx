@@ -25,7 +25,7 @@ const pipelines = [
 const InstructorDashboard = () => {
   return (
     <div className="relative z-10 flex-1 px-6 pb-24">
-      <div className="mx-auto max-w-6xl pt-20">
+  <div className="mx-auto max-w-6xl pt-12">
         <SectionHeader
           kicker="Instructor lab"
           heading="Design, deploy, and iterate with lucid control."

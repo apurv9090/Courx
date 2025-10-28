@@ -51,7 +51,7 @@ const Home = () => {
 
   return (
     <div className="relative z-10 flex-1">
-      <section className="relative overflow-hidden px-6 pt-20 sm:pt-28">
+  <section className="relative overflow-hidden px-6 pt-12 sm:pt-20">
         <div className="mx-auto flex max-w-6xl flex-col gap-16 lg:flex-row lg:items-center">
           <motion.div
             className="flex-1 space-y-10"

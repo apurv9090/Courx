@@ -24,8 +24,8 @@ const NavigationBar = () => {
   }
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-xl">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-night/80 backdrop-blur-xl">
+      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 sm:py-5">
         <NavLink to="/" className="group relative inline-flex items-center gap-3">
           <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-neon-cyan">
             <span className="absolute inset-0 animate-pulse-soft rounded-full bg-neon-cyan/20 blur-lg" />
@@ -74,7 +74,7 @@ const NavigationBar = () => {
           </NavLink>
           <NavLink
             to="/auth/register"
-            className="relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-white/15 bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-white/15 bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-neon-cyan/40 via-neon-magenta/40 to-neon-violet/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <span className="relative">Join Now</span>

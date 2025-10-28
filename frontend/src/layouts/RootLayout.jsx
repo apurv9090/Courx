@@ -10,7 +10,7 @@ const RootLayout = () => {
       <AuroraBackground />
       <ScrollToTop />
       <NavigationBar />
-      <main className="relative z-10 flex min-h-screen flex-col">
+      <main className="relative z-10 flex min-h-screen flex-col pt-24">
         <Outlet />
       </main>
       <Footer />
