@@ -1,10 +1,9 @@
 # TODO
 
-- [ ] Map SRS modules to UI screens/components.
-- [ ] Design component architecture and routing for dashboard flows.
-- [ ] Scaffold Vite React app named `frontend` with Tailwind CSS.
-- [ ] Configure animation libraries (e.g., Framer Motion/GSAP) for Web3 feel.
-- [ ] Build immersive landing + auth + dashboard experiences per SRS roles.
-- [ ] Add course/payment/progress/review UI mockups covering key flows.
-- [ ] Create responsive layouts and polished theming.
-- [ ] Run lint/build to validate setup.
+- [x] Review SRS requirements and UI scope.
+- [x] Plan frontend structure and routing.
+- [x] Scaffold Vite React app named `frontend`.
+- [x] Configure Tailwind CSS and animation tooling.
+- [x] Implement Web3-inspired UI components per SRS.
+- [x] Ensure SRS functional coverage in UI mock flows.
+- [x] Test build and run dev server.

@@ -1,16 +1,37 @@
-# React + Vite
+# CourX · Immersive Web3 Learning Dashboard (UI)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React + Vite frontend delivers the CourX experience described in the SRS — a neon-soaked, Web3-inspired course platform with:
 
-Currently, two official plugins are available:
+- Cinematic landing page, dynamic stats, and testimonials
+- Rich course catalog, detail pages, and Razorpay-focused checkout flow
+- Role-specific dashboards for students, instructors, and admins
+- Auth screens (login, register, OTP reset) and course creation UI mockups
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Styling is powered by Tailwind CSS with custom neon themes, Framer Motion animations, smooth Lenis scrolling, and Headless UI/heroicons for interaction polish. No backend or data persistence is included; all views present high-fidelity UI mocks aligned with the SRS requirements.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Visit the dev server URL (default: `http://localhost:5173`) to explore the animated experience.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Available Scripts
+
+- `npm run dev` – start Vite in development mode with HMR
+- `npm run build` – create a production build (already verified once)
+- `npm run preview` – locally preview the production build
+- `npm run lint` – run ESLint on project sources
+
+## Key Libraries
+
+- **Tailwind CSS + tailwindcss-animate** for responsive neon aesthetic
+- **Framer Motion** for immersive transitions
+- **Lenis** for buttery-smooth scrolling
+- **React Router** for routing across all SRS-driven screens
+- **@headlessui/react & @heroicons/react** for accessible interactive primitives
+
+Feel free to extend animations, replace placeholder imagery, or connect real APIs when you build the production backend.

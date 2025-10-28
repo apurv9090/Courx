@@ -1,34 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Lenis from 'lenis'
+import RootLayout from './layouts/RootLayout'
+import Home from './pages/Home'
+import Courses from './pages/Courses'
+import CourseDetail from './pages/CourseDetail'
+import Checkout from './pages/Checkout'
+import StudentDashboard from './pages/dashboard/StudentDashboard'
+import InstructorDashboard from './pages/dashboard/InstructorDashboard'
+import AdminDashboard from './pages/dashboard/AdminDashboard'
+import Login from './pages/auth/Login'
+import Register from './pages/auth/Register'
+import ForgotPassword from './pages/auth/ForgotPassword'
+import NotFound from './pages/NotFound'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.09,
+      syncTouch: true,
+      smoothWheel: true,
+    })
+
+    let animationFrame
+    const raf = (time) => {
+      lenis.raf(time)
+      animationFrame = requestAnimationFrame(raf)
+    }
+    animationFrame = requestAnimationFrame(raf)
+
+    return () => {
+      cancelAnimationFrame(animationFrame)
+      lenis.destroy()
+    }
+  }, [])
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Routes>
+      <Route element={<RootLayout />}>
+        <Route index element={<Home />} />
+        <Route path="courses" element={<Courses />} />
+        <Route path="courses/:slug" element={<CourseDetail />} />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="dashboard">
+          <Route path="student" element={<StudentDashboard />} />
+          <Route path="instructor" element={<InstructorDashboard />} />
+          <Route path="admin" element={<AdminDashboard />} />
+        </Route>
+        <Route path="auth">
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="forgot" element={<ForgotPassword />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }
 
